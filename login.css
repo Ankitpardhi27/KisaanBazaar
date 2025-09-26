@@ -1,0 +1,112 @@
+/* Background and overlay */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('/images/logiin.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 0;
+}
+
+/* Container holds the forms */
+.container {
+  position: relative;
+  z-index: 1; /* above overlay */
+  max-width: 400px;
+  margin: 8vh auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+  transform-origin: top center;
+}
+
+/* Scale container vertically */
+.container.scaled {
+  transform: scaleY(1.1);
+}
+
+/* Title styling */
+#form-title {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.tabs button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #34495e;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.tabs button.active {
+  border-color: #27ae60;
+  color: #27ae60;
+  font-weight: 700;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form.hidden {
+  display: none;
+}
+
+input, select {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1.8px solid #bdc3c7;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #27ae60;
+}
+
+.btn {
+  background-color: #27ae60;
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #219150;
+}
